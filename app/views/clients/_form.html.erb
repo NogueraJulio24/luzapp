@@ -1,0 +1,53 @@
+<%= form_with(model: client, local: true) do |form| %>
+  <% if client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field col-md-12">
+    <%= form.label :name, 'Nombres' %>
+    <%= form.text_field :name, id: :client_name, class: 'form-control' %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :lastname, 'Apellidos' %>
+    <%= form.text_field :lastname, id: :client_lastname, class: 'form-control' %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :dateofbirth, 'Fecha de Nacimiento' %>
+    <%= form.date_select :dateofbirth, id: :client_dateofbirth, :start_year => 1950, :end_year => 2000 %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :document, 'Documento' %>
+    <%= form.text_field :document, id: :client_document, class: 'form-control' %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :cedula_frente, 'Cédula' %><br>
+    Frente: <%= form.file_field :cedula_frente, class: 'form-control-file' %>
+    Reverso: <%= form.file_field :cedula_reverso, class: 'form-control-file' %><br><br>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :phone, 'Telefono' %>
+    <%= form.text_field :phone, id: :client_phone, class: 'form-control' %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :address, 'Dirección' %>
+    <%= form.text_field :address, id: :client_address, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit :class => 'btn btn-success' %>
+  </div>
+<% end %>

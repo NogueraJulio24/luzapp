@@ -1,0 +1,71 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field col-md-12">
+    <%= form.label :name, 'Nombre', class: 'bmd-label-floating' %>
+    <%= form.text_field :name, id: :product_name, class: 'form-control' %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :model, 'Modelo', class: 'bmd-label-floating' %>
+    <%= form.text_field :model, id: :product_model, class: 'form-control' %>
+  </div>
+
+  <div class="field col-md-12">
+      <%= form.label :code, 'Codigo' %>
+      <%= form.number_field :code, id: :product_code, class: 'form-control', :disable => true %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :image, 'Imagen' %>
+    <%= form.file_field :image, class: 'form-control-file' %>
+  </div>
+<br>
+  <div class="field col-md-12">
+    <%= form.label :buy_price, 'Precio de Compra' %>
+    <%= form.number_field :buy_price, id: :product_buy_price, class: 'form-control' %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :description, 'Descripción' %>
+    <%= form.text_area :description, id: :product_description, class: 'form-control' %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :brand_id, 'Marca' %>
+    <%= form.collection_select :brand_id, Brand.order(:name), :id, :name, include_blank: 'Selecciona una opción', class: 'selectpicker' %>
+    <%= link_to new_brand_path, class: 'btn btn-default btn-sm' do %>
+        <i class="fa fa-plus" aria-hidden="true"> Agregar</i>
+    <% end %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :category_id, 'Categoría' %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, include_blank: 'Selecciona una opción', class: 'form-control' %>
+    <%= link_to new_category_path, class: 'btn btn-default btn-sm' do %>
+        <i class="fa fa-plus" aria-hidden="true"> Agregar</i>
+    <% end %>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :provider_id, 'Proveedor' %>
+    <%= form.collection_select :provider_id, Provider.order(:name), :id, :name, include_blank: 'Selecciona una opción', class: 'form-control' %>
+    <%= link_to new_provider_path, class: 'btn btn-default btn-sm' do %>
+        <i class="fa fa-plus" aria-hidden="true"> Agregar</i>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit :class => 'btn btn-success' %>
+  </div>
+<% end %>

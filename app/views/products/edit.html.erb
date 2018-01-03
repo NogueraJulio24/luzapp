@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header" data-background-color="purple">
+    <h3 class="title text-center">Editar Producto</h3>
+  </div>
+  <div class="card-body">
+    <%= render 'form', product: @product %>
+  </div>
+</div>
+
+<%= link_to 'Mostrar', @product, class: 'btn btn-success' %>
+<%= link_to 'Atrás', products_path, class: 'btn btn-success' %>

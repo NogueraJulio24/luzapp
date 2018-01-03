@@ -1,0 +1,57 @@
+<%= form_with(model: provider, local: true) do |form| %>
+  <% if provider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
+
+      <ul>
+      <% provider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, 'Nombre' %>
+    <%= form.text_field :name, id: :provider_name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :social_razon, 'Razon social' %>
+    <%= form.number_field :social_razon, id: :provider_social_razon, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comercial_sector, 'Sector Comercial' %>
+    <%= form.text_field :comercial_sector, id: :provider_comercial_sector, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :document_type, 'Tipo de Documento' %>
+    <%= form.text_field :document_type, id: :provider_document_type, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :document_number, 'Numero de Documento' %>
+    <%= form.text_field :document_number, id: :provider_document_number, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address, 'Dirección' %>
+    <%= form.text_field :address, id: :provider_address, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, 'Email' %>
+    <%= form.text_field :email, id: :provider_email, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url, 'Sitio Web' %>
+    <%= form.text_field :url, id: :provider_url, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit :class => 'btn btn-success'%>
+  </div>
+<% end %>

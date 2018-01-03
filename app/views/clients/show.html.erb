@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+  <div class="card-header" data-background-color="purple">
+    <h3 class="title"><%= @client.name %> <%= @client.lastname %></h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+
+      </div>
+      <div class="col-md-6">
+        <p>
+          <strong>Cédula de Identidad:</strong>
+          <%= @client.document %>
+        </p>
+
+        <p>
+          <strong>Teléfono:</strong>
+          <%= @client.phone %>
+        </p>
+
+        <p>
+          <strong>Dirección:</strong>
+          <%= @client.address %>
+        </p>
+        <p>
+          <strong>Fecha de Nacimiento: </strong>
+          <%= @client.dateofbirth %>
+        </p>
+        <p>
+          <strong>Edad: </strong>
+          <%= @client.age %> años
+        </p>
+        <p><center>
+          <% if @client.cedula_frente.present? %>
+              <%= image_tag @client.cedula_frente.url(:medium) %> <br><br>
+              <%= image_tag @client.cedula_reverso.url(:medium) %></center>
+          <% else %>
+              <p>No hay cedula de Identidad</p>
+          <% end %>
+
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Eidtar', edit_client_path(@client), class: 'btn btn-success' %>
+<%= link_to 'Atrás', clients_path, class: 'btn btn-success' %>

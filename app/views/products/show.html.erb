@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+  <div class="card-header" data-background-color="purple">
+    <h3 class="title text-center"><%= @product.name %></h3>
+  </div>
+        <div class="col-md-6">
+            <%= image_tag @product.image.url(:medium) %>
+        </div>
+
+        <div class="col-md-6">
+
+            <p>
+              <strong>Código:</strong>
+              <%= @product.code %>
+            </p>
+            <p>
+              <strong>Precio de Compra:</strong>
+              <%= @product.buy_price %>
+            </p>
+
+            <p>
+              <strong>Descripcion:</strong>
+              <%= @product.description %>
+            </p>
+
+            <p>
+              <strong>Marca:</strong>
+              <%= @product.brand.name %>
+            </p>
+
+            <p>
+              <strong>Categoria:</strong>
+              <%= @product.category.name %>
+            </p>
+
+            <p>
+              <strong>Proveedor:</strong>
+              <%= @product.provider.name %>
+            </p>
+
+    </div>
+</div>
+
+<%= link_to 'Editar', edit_product_path(@product), class: 'btn btn-success' %>
+<%= link_to 'Atrás', :back , class: 'btn btn-success' %>

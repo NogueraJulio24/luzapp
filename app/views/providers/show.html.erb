@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @provider.name %>
+</p>
+
+<p>
+  <strong>Social razon:</strong>
+  <%= @provider.social_razon %>
+</p>
+
+<p>
+  <strong>Comercial sector:</strong>
+  <%= @provider.comercial_sector %>
+</p>
+
+<p>
+  <strong>Document type:</strong>
+  <%= @provider.document_type %>
+</p>
+
+<p>
+  <strong>Document number:</strong>
+  <%= @provider.document_number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @provider.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @provider.email %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @provider.url %>
+</p>
+
+<%= link_to 'Edit', edit_provider_path(@provider) %> |
+<%= link_to 'Back', providers_path %>

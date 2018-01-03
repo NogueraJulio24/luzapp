@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+  <div class="card-header" data-background-color="purple">
+    <h3 class="title"><%= @brand.name %></h3>
+  </div>
+  <div class="">
+    <strong>Description:</strong>
+    <%= @brand.description %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%= link_to 'Back', :back  %>
