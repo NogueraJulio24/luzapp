@@ -65,3 +65,5 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # Authentication User
 gem 'devise'
+# Charts
+gem 'chartkick'

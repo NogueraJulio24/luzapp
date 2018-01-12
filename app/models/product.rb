@@ -15,10 +15,4 @@ class Product < ApplicationRecord
         self.code = rand(999999999)
     end
   end
-
-  def precio_venta
-    precio = (buy_price * 2) / 12
-    return precio
-  end
-
 end

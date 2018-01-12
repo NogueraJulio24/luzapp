@@ -11,40 +11,54 @@
     </div>
   <% end %>
 
-  <div class="field col-md-12">
-    <%= form.label :name, 'Nombres' %>
-    <%= form.text_field :name, id: :client_name, class: 'form-control' %>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :name, 'Nombres' %>
+      <%= form.text_field :name, id: :client_name, class: 'form-control' %>
+    </div>
+
+    <div class="field col-md-6">
+      <%= form.label :lastname, 'Apellidos' %>
+      <%= form.text_field :lastname, id: :client_lastname, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field col-md-12">
-    <%= form.label :lastname, 'Apellidos' %>
-    <%= form.text_field :lastname, id: :client_lastname, class: 'form-control' %>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :document, 'Documento' %>
+      <%= form.text_field :document, id: :client_document, class: 'form-control' %>
+    </div>
+
+    <div class="field col-md-6">
+      <%= form.label :dateofbirth, 'Fecha de Nacimiento' %>
+      <%= form.date_select :dateofbirth, id: :client_dateofbirth, :start_year => 1950, :end_year => 2000 %>
+      <!-- FALTA SOLUCIONAR GENERO -->
+      <div class="field">
+        <%= form.label :gender, "Género" %>
+          <%= form.radio_button :gender, 'male' %> Masculino <br>
+          <%= form.radio_button :gender, 'fame' %> Femenino
+      </div>
+    </div>
   </div>
 
-  <div class="field col-md-12">
-    <%= form.label :dateofbirth, 'Fecha de Nacimiento' %>
-    <%= form.date_select :dateofbirth, id: :client_dateofbirth, :start_year => 1950, :end_year => 2000 %>
+  <div class="row">
+    <div class="field col-md-12">
+      <%= form.label :cedula_frente, 'Cédula' %><br>
+      Frente: <%= form.file_field :cedula_frente, class: 'form-control-file' %>
+      Reverso: <%= form.file_field :cedula_reverso, class: 'form-control-file' %><br>
+    </div>
   </div>
 
-  <div class="field col-md-12">
-    <%= form.label :document, 'Documento' %>
-    <%= form.text_field :document, id: :client_document, class: 'form-control' %>
-  </div>
+  <div class="row">
+    <div class="field col-md-6">
+      <%= form.label :phone, 'Telefono' %>
+      <%= form.text_field :phone, id: :client_phone, class: 'form-control' %>
+    </div>
 
-  <div class="field col-md-12">
-    <%= form.label :cedula_frente, 'Cédula' %><br>
-    Frente: <%= form.file_field :cedula_frente, class: 'form-control-file' %>
-    Reverso: <%= form.file_field :cedula_reverso, class: 'form-control-file' %><br><br>
-  </div>
-
-  <div class="field col-md-12">
-    <%= form.label :phone, 'Telefono' %>
-    <%= form.text_field :phone, id: :client_phone, class: 'form-control' %>
-  </div>
-
-  <div class="field col-md-12">
-    <%= form.label :address, 'Dirección' %>
-    <%= form.text_field :address, id: :client_address, class: 'form-control' %>
+    <div class="field col-md-6">
+      <%= form.label :address, 'Dirección' %>
+      <%= form.text_field :address, id: :client_address, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="actions">

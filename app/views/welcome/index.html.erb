@@ -1,52 +1,45 @@
+<%= render :partial => 'cards' %>
 <div class="row">
-  <div class="col-md-3">
-    <div class="card card-stats">
-    	<div class="card-header" data-background-color="orange">
-    		<i class="fa fa-user"></i>
-    	</div>
-    	<div class="card-content">
-    		<p class="category">Productos</p>
-    		<h3 class="title"><%= @products.count %><small> En lista</small></h3>
-    	</div>
-    </div>
+  <div class="col-md-6">
+   
   </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header" data-background-color="green">
+        <h3 class="title text-center">Hoy es cumpleaños de: </h3>
+      </div>
+      <table class="table table-responsive table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Cliente</th>
+            <th>Teléfono</th>
+            <th>Edad</th>
+          </tr>
+        </thead>
 
-  <div class="col-md-3">
-    <div class="card card-stats">
-    	<div class="card-header" data-background-color="orange">
-    		<i class="fa fa-user"></i>
-    	</div>
-    	<div class="card-content">
-    		<p class="category">Categorias</p>
-    		<h3 class="title"><%= @category .count %><small> En lista</small></h3>
-    	</div>
+        <tbody>
+          <% @clients.each.with_index(1) do |client, index| %>
+          <% if client.dbo_today %>
+          <tr>
+            <td><%= index %></td>
+            <td><%= client.complete_name %></td>
+            <td><%= client.phone %></td>
+            <td><%= client.age %></td>
+          </tr>
+          <% end %>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-      <table class="table">
-          <thead>
-            <tr>
-              <td>#</td>
-              <td>Nombre</td>
-              <td>Telefono</td>
-              <td>Edad</td>
-            </tr>
-          </thead>
-          <tbody>
-            <% @clients.each do |client, index| %>
-
-                <tr>
-                  <td><%= index %></td>
-                  <td><%= client.name %></td>
-                  <td><%= client.phone %></td>
-                  <td><%= client.age %></td>
-                </tr>
-              
-            <% end %>
-          </tbody>
-      </table>
+  <div class="col-md-6">
+      <%= line_chart @products_count %>
+  </div>
+  <div class="col-md-6">
+    <%= pie_chart @products.group(:name).count %>
   </div>
 </div>

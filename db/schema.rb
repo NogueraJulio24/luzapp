@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221160400) do
+ActiveRecord::Schema.define(version: 20180108131516) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20171221160400) do
     t.integer "cedula_reverso_file_size"
     t.datetime "cedula_reverso_updated_at"
     t.date "dateofbirth"
+    t.string "gender"
   end
 
   create_table "products", force: :cascade do |t|
@@ -64,6 +65,9 @@ ActiveRecord::Schema.define(version: 20171221160400) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.string "model"
+    t.integer "sell18"
+    t.integer "sell12"
+    t.integer "sell6"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"

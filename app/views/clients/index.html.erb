@@ -26,11 +26,11 @@
         <td><%= index %></td>
         <td><%= client.name %></td>
         <td><%= client.lastname %></td>
-        <td><%= client.document %></td>
+        <td><%= number_to_currency(client.document, unit: "", delimiter: ".", precision: 0) %></td>
         <td><%= client.phone %></td>
         <td><%= client.address %></td>
         <td><%= link_to client do %>
-          <i class="fa fa-eye"></i>
+          <i class="fa fa-eye" style="color: #03a9f4"></i>
         <% end %></td>
         <td><%= link_to edit_client_path(client) do %>
           <i class="fa fa-edit"></i>

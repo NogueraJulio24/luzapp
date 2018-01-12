@@ -14,6 +14,8 @@
 //= require jquery3
 //= require popper
 //= require turbolinks
+//= require Chart.bundle
+//= require chartkick
 //= require bootstrap
 //= require bootstrap-material-design
 //= require material_kit

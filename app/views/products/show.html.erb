@@ -4,41 +4,52 @@
   <div class="card-header" data-background-color="purple">
     <h3 class="title text-center"><%= @product.name %></h3>
   </div>
-        <div class="col-md-6">
-            <%= image_tag @product.image.url(:medium) %>
+    <div class="row">
+      <div class="col-md-4 center">
+          <%= image_tag @product.image.url(:medium) %>
+      </div>
+
+      <div class="col-md-7">
+        <div class="row">
+          <p>
+            <strong>Código:</strong>
+            <%= @product.code %>
+          </p>
+
+          <p>
+            <strong>Precio de Compra:</strong>
+            <%= number_to_currency(@product.buy_price, unit: "Gs. ", delimiter: ".", precision: 0) %>
+          </p>
+
+          <p>
+            <strong>Precio de Venta: </strong>
+              <br>
+              18 Meses:<%= number_to_currency(@product.sell18, unit: "Gs. ", delimiter: ".", precision: 0) %><br>
+              12 Meses:<%= number_to_currency(@product.sell12, unit: "Gs. ", delimiter: ".", precision: 0) %><br>
+              6 Meses: <%= number_to_currency(@product.sell6, unit: "Gs. ", delimiter: ".", precision: 0) %><br>
+          </p>
+
+          <p>
+            <strong>Descripcion:</strong>
+            <%= @product.description %>
+          </p>
+
+          <p>
+            <strong>Marca:</strong>
+            <%= @product.brand.name %>
+          </p>
+
+          <p>
+            <strong>Categoria:</strong>
+            <%= @product.category.name %>
+          </p>
+
+          <p>
+            <strong>Proveedor:</strong>
+            <%= @product.provider.name %>
+          </p>
         </div>
-
-        <div class="col-md-6">
-
-            <p>
-              <strong>Código:</strong>
-              <%= @product.code %>
-            </p>
-            <p>
-              <strong>Precio de Compra:</strong>
-              <%= @product.buy_price %>
-            </p>
-
-            <p>
-              <strong>Descripcion:</strong>
-              <%= @product.description %>
-            </p>
-
-            <p>
-              <strong>Marca:</strong>
-              <%= @product.brand.name %>
-            </p>
-
-            <p>
-              <strong>Categoria:</strong>
-              <%= @product.category.name %>
-            </p>
-
-            <p>
-              <strong>Proveedor:</strong>
-              <%= @product.provider.name %>
-            </p>
-
+      </div>
     </div>
 </div>
 
