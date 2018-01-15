@@ -17,4 +17,12 @@ module ApplicationHelper
       when :alert then 'alert alert-error'
     end
   end
+
+  def genderIs
+    if @client.gender == true
+      'Masculino'
+    else
+      'Femenino'
+    end
+  end
 end

@@ -35,8 +35,10 @@
       <!-- FALTA SOLUCIONAR GENERO -->
       <div class="field">
         <%= form.label :gender, "Género" %>
-          <%= form.radio_button :gender, 'male' %> Masculino <br>
-          <%= form.radio_button :gender, 'fame' %> Femenino
+          <%= form.label :gender, 'Masculino', :value => 'true' %>
+          <%= form.radio_button :gender, true %> <br>
+          <%= form.label :gender, 'Femenino', :value => 'false' %>
+          <%= form.radio_button :gender, false %> <br>
       </div>
     </div>
   </div>
