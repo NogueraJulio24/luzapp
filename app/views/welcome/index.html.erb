@@ -1,7 +1,7 @@
 <%= render :partial => 'cards' %>
 <div class="row">
   <div class="col-md-6">
-   
+
   </div>
   <div class="col-md-6">
     <div class="card">
@@ -32,14 +32,5 @@
         </tbody>
       </table>
     </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
-      <%= line_chart @products_count %>
-  </div>
-  <div class="col-md-6">
-    <%= pie_chart @products.group(:name).count %>
   </div>
 </div>
