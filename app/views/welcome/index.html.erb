@@ -20,14 +20,14 @@
 
         <tbody>
           <% @clients.each.with_index(1) do |client, index| %>
-          <% if client.dbo_today %>
-          <tr>
-            <td><%= index %></td>
-            <td><%= client.complete_name %></td>
-            <td><%= client.phone %></td>
-            <td><%= client.age %></td>
-          </tr>
-          <% end %>
+              <% if client.dbo_today %>
+              <tr>
+                <td><%= index %></td>
+                <td><%= client.complete_name %></td>
+                <td><%= client.phone %></td>
+                <td><%= client.age %></td>
+              </tr>
+              <% end %>
           <% end %>
         </tbody>
       </table>
