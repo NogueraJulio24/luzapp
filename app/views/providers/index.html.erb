@@ -5,48 +5,49 @@
     <h3 class="title text-center">Proveedores</h3>
     <h6 class="category text-center">Cantidad de Proveedores: <%= @providers.count %></h6>
   </div>
-  <table class="table table-responsive table-hover">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Nombre</th>
-      <th>Social razon</th>
-      <th>Sector Comercial</th>
-      <th>Tipo de Documento</th>
-      <th>Numero de Documento</th>
-      <th>Dirección</th>
-      <th>Email</th>
-      <th>Sitio Web</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="table-responsive">
+      <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Social razon</th>
+          <th>Sector Comercial</th>
+          <th>Tipo de Documento</th>
+          <th>Numero de Documento</th>
+          <th>Dirección</th>
+          <th>Email</th>
+          <th>Sitio Web</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @providers.each.with_index(1) do |provider, index| %>
-      <tr>
-        <td><%= index %></td>
-        <td><%= provider.name %></td>
-        <td><%= provider.social_razon %></td>
-        <td><%= provider.comercial_sector %></td>
-        <td><%= provider.document_type %></td>
-        <td><%= provider.document_number %></td>
-        <td><%= provider.address %></td>
-        <td><%= provider.email %></td>
-        <td><%= provider.url %></td>
-        <td><%= link_to provider do %>
-          <i class="fa fa-eye" style="color: #03a9f4"></i>
-        <% end %></td>
-        <td><%= link_to edit_provider_path(provider) do %>
-          <i class="fa fa-edit"></i>
-        <% end %></td>
-        <td><%= link_to provider, method: :delete, data: { confirm: '¿Está seguro que desea eliminar ' + provider.name + '?' } do %>
-          <i class="fa fa-remove" style="color: red"></i>
-        <% end %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <tbody>
+        <% @providers.each.with_index(1) do |provider, index| %>
+          <tr>
+            <td><%= index %></td>
+            <td><%= provider.name %></td>
+            <td><%= provider.social_razon %></td>
+            <td><%= provider.comercial_sector %></td>
+            <td><%= provider.document_type %></td>
+            <td><%= provider.document_number %></td>
+            <td><%= provider.address %></td>
+            <td><%= provider.email %></td>
+            <td><%= provider.url %></td>
+            <td><%= link_to provider do %>
+              <i class="fa fa-eye" style="color: #03a9f4"></i>
+            <% end %></td>
+            <td><%= link_to edit_provider_path(provider) do %>
+              <i class="fa fa-edit"></i>
+            <% end %></td>
+            <td><%= link_to provider, method: :delete, data: { confirm: '¿Está seguro que desea eliminar ' + provider.name + '?' } do %>
+              <i class="fa fa-remove" style="color: red"></i>
+            <% end %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 <br>
 

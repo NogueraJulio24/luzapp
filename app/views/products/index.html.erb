@@ -12,39 +12,42 @@
     <h3 class="title text-center">Productos</h3>
     <h6 class="category text-center">Cantidad de Productos: <%= @products.count %></h6>
   </div>
-  <table class="table table-responsive table-hover">
-    <thead>
-    <tr>
-      <th>#</th>
-      <th>Nombre</th>
-      <th>Codigo</th>
-      <th>Imagen</th>
-      <th>Precio Compra</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @products.each.with_index(1) do |product, index| %>
-      <tr>
-        <td><%= index %></td>
-        <td><%= product.name %></td>
-        <td><%= product.code %></td>
-        <td><%= image_tag(product.image.url(:thumb), size: "30px") %></td>
-        <td><%= number_to_currency(product.buy_price, unit: "Gs. ", delimiter: ".", precision: 0) %></td>
-        <td><%= link_to product do %>
-          <i class="fa fa-eye" style="color: #03a9f4"></i>
-        <% end %></td>
-        <td><%= link_to edit_product_path(product) do %>
-          <i class="fa fa-edit"></i>
-        <% end %></td>
-        <td><%= link_to product, method: :delete, data: { confirm: '¿Está seguro que desea eliminar ' + product.name + '?' } do %>
-          <i class="fa fa-remove" style="color: red"></i>
-        <% end %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Codigo</th>
+          <th>Imagen</th>
+          <th>Precio Compra</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @products.each.with_index(1) do |product, index| %>
+          <tr>
+            <td><%= index %></td>
+            <td><%= product.name %></td>
+            <td><%= product.code %></td>
+            <td><%= image_tag(product.image.url(:thumb), size: "30px") %></td>
+            <td><%= number_to_currency(product.buy_price, unit: "Gs. ", delimiter: ".", precision: 0) %></td>
+            <td><%= link_to product do %>
+              <i class="fa fa-eye" style="color: #03a9f4"></i>
+            <% end %></td>
+            <td><%= link_to edit_product_path(product) do %>
+              <i class="fa fa-edit"></i>
+            <% end %></td>
+            <td><%= link_to product, method: :delete, data: { confirm: '¿Está seguro que desea eliminar ' + product.name + '?' } do %>
+              <i class="fa fa-remove" style="color: red"></i>
+            <% end %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 <br>
 
