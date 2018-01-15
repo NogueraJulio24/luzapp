@@ -40,7 +40,7 @@
             <td><%= link_to edit_provider_path(provider) do %>
               <i class="fa fa-edit"></i>
             <% end %></td>
-            <td><%= link_to provider, method: :delete, data: { confirm: '¿Está seguro que desea eliminar ' + provider.social_razon + '?' } do %>
+            <td><%= link_to provider, method: :delete, data: { confirm: '¿Está seguro que desea eliminar ' + provider.name + '?' } do %>
               <i class="fa fa-remove" style="color: red"></i>
             <% end %></td>
           </tr>
