@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 group :development do
-  gem 'sqlite3'
+  gem 'pg'
 end
 
 group :production do
